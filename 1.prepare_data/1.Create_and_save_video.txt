@@ -1,0 +1,4 @@
+readme
+1.We have the video with face
+2. With dlib library, we start work only with eyes
+3. We save video only with eyes
