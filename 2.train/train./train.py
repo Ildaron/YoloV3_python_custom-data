@@ -11,16 +11,16 @@ from yolo3.utils import get_random_data
 print ("ok_Start")
 
 def _main():
-    annotation_path = 'C:/Users/IldaRon/Desktop/My_yolo/6.Real_prog/new_train.txt'
+    annotation_path = 'new_train.txt'
     log_dir = 'logs/001/'
   
-    classes_path = 'C:/Users/IldaRon/10.1My_YOLO_works_new_train/model_data/voc_classes.txt'
-    anchors_path = 'C:/Users/IldaRon/10.1My_YOLO_works_new_train/model_data/yolo_anchors.txt'
+    classes_path = 'voc_classes.txt'
+    anchors_path = 'yolo_anchors.txt'
     class_names = get_classes(classes_path)
     num_classes = len(class_names)
     anchors = get_anchors(anchors_path)
     input_shape = (416,416) 
-    model = create_model(input_shape, anchors, num_classes, freeze_body=2, weights_path='C:/Users/IldaRon/10.1My_YOLO_works_new_train/model_data/yolo.h5') 
+    model = create_model(input_shape, anchors, num_classes, freeze_body=2, weights_path='yolo.h5') 
     logging = TensorBoard(log_dir=log_dir)
     checkpoint = ModelCheckpoint(log_dir + 'ep{epoch:03d}-loss{loss:.3f}-val_loss{val_loss:.3f}.h5', monitor='val_loss', save_weights_only=False, save_best_only=False, period=3)
     reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, verbose=1)
