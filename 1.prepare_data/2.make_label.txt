@@ -1,1 +1,13 @@
-
+1.For label we use- "YOLO-Annotation-Tool-master".
+2. make label in the next type - 
+"
+1
+24 16 52 31
+"
+in separate files
+but, we need only one file with the next type -
+"
+C:/Users/image/1.jpg 21,17,49,31,0
+C:/Users/image/2.jpg 24,16,52,31,0
+"
+where 0it is number of object
